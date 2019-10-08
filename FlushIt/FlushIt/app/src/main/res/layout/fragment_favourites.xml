@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/baseLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient"
+                android:theme="@style/AppBaseTheme">
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/secretButton"
+            style="@style/ButtonStyle"
+            android:visibility="gone"
+            android:layout_marginTop="100dp"
+            android:text="TO UPLOAD PAGE"/>
+
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                               android:id="@+id/recyclerView"
+                                               android:layout_height="match_parent"/>
+
+
+
+</RelativeLayout>

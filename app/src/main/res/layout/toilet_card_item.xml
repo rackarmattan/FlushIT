@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   android:layout_width="match_parent"
+                                   android:layout_margin="8dp"
+                                   android:layout_height="wrap_content">
+
+    <RelativeLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_height="wrap_content">
+
+        <Button android:layout_width="17dp"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/delete_button"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ic_close_black_24dp"
+                android:layout_height="17dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/toilet_name_text"
+                  android:layout_centerHorizontal="true"
+                  android:gravity="center_horizontal"
+                  android:text="Name"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginBottom="8dp"
+                  android:layout_height="wrap_content"/>
+
+
+        <ImageView android:layout_width="match_parent"
+                   android:layout_below="@id/delete_button"
+                   android:id="@+id/toilet_image_view"
+                   android:layout_height="220dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/grade_text"
+                  android:text="Grade"
+                  android:layout_below="@id/toilet_image_view"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginBottom="8dp"
+                  android:layout_centerHorizontal="true"
+                  android:layout_height="wrap_content"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

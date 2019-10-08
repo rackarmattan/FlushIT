@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">FlushIT</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="toilet_title">Name:</string>
+    <string name="toilet_price">Pris:</string>
+    <string name="toilet_description">Beskrivning:</string>
+    <string name="open_map_button">Öppna kartan</string>
+    <string name="start_page_headline">FlushIT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="back">Gå till startsidan</string>
+    <string name="rated_toilets">Betygsatta toaletter</string>
+    <string name="map">Karta</string>
+    <string name="share">Dela appen</string>
+    <string name="feedback">Skicka feedback!</string>
+    <string name="about">Information om appen</string>
+    <string name="other">Övrigt:</string>
+    <string name="navtitle">Navigering</string>
+    <string name="markAsFavourite">Markera som favorit</string>
+    <string name="login">LOGGA IN</string>
+    <string name="signup">
+        <u>Inget konto än? Skapa konto</u>
+    </string>
+    <string name="signup_header">Skapa konto</string>
+    <string name="hint_username">E-mail</string>
+    <string name="hint_username_again">Bekräfta e-mail</string>
+    <string name="hint_password">Lösenord</string>
+    <string name="create_account">SKAPA KONTO</string>
+    <string name="go_back">GÅ TILLBAKA</string>
+    <string name="logout">Logga ut</string>
+    <string name="go_to_login">
+        <u>Har du redan ett konto? Logga in</u>
+    </string>
+    <string name="rate">Betygsätt denna toalett!</string>
+    <string name="information_header">Hej!</string>
+
+    <string name="information">Vi alla har väl någon gång i livet känt att vi befinner oss i en ny (eller inte ny för
+        den delen) stad och skulle vilja ha en överblick över vart alla de närmsta offentliga toeletterna ligger? Som vi
+        alla vet kan ju även dessa offentliga toaletter tendera att ha en varierande nivå av fräschhet. Tråkig situation!
+        \n \n
+        Med denna app kan du som användare lätt få en snabb överblick över var alla offentliga toaletter ligger. Du får även genom att trycka
+        på en toalettikon på kartan en bild på hur just den toaletten ser ut, om den kostar något, en kort beskrivning
+        samt ett betyg som röstats fram av alla användare. Förhoppningsvis har du nu ett lite mindre pissigt liv!
+    </string>
+    <string name="logged_in_as">Inloggad som: %1$s</string>
+    <string name="average_rating_text">Medelbetyg: %1$s. Antal röster: %2$d. </string>
+
+
+    <!-- ERROR TEXTS -->
+    <string name="email_not_empty">E-mail kan inte vara tomt</string>
+    <string name="email_not_equal">Du måste skriva samma e-mail</string>
+    <string name="not_email">Skriv en giltig e-mail adress</string>
+    <string name="password_not_empty">Lösenordet kan inte vara tomt</string>
+    <string name="password_longer_than">Lösenordet måste vara längre än fem tecken</string>
+
+</resources>

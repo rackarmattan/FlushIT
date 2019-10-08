@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                style="@style/ToiletHeader"
+                android:layout_marginTop="10dp"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="40sp"
+                android:autoSizeStepGranularity="2sp"
+                android:id="@+id/toiletTextName"/>
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:contentDescription="toilet_picture"
+                android:layout_marginTop="10dp"
+                android:id="@+id/toiletImageView"
+                android:layout_below="@id/toiletTextName"
+                android:adjustViewBounds="true"/>
+
+        <RatingBar android:layout_width="wrap_content"
+                   android:id="@+id/ratingBar"
+                   android:layout_below="@id/toiletImageView"
+                   android:stepSize="0.2"
+                   android:progressTint="@color/golden"
+                   android:secondaryProgressTint="@color/golden"
+                   android:numStars="5"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_height="wrap_content"/>
+
+
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/averageNumberText"
+                  android:layout_below="@id/ratingBar"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginStart="15dp"
+                  android:layout_height="wrap_content"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/averageNumberText"
+                android:background="@color/lightgrey"/>
+
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:id="@+id/price_linear"
+                      android:layout_marginTop="5dp"
+                      android:layout_height="wrap_content"
+                      android:layout_below="@id/averageNumberText"
+                      android:orientation="horizontal"
+                      android:paddingTop="5dp">
+
+            <TextView
+                    android:text="@string/toilet_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/SmallHeaders"/>
+
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/toiletTextPrice"
+                    style="@style/BreadText"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_below="@id/price_linear"
+                      android:orientation="horizontal"
+                      android:layout_marginBottom="8dp"
+                      android:paddingTop="10dp">
+
+            <TextView android:id="@+id/description"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/toilet_description"
+                      style="@style/SmallHeaders"/>
+
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/toiletTextDescription"
+                    style="@style/BreadText"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

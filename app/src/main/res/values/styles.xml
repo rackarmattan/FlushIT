@@ -1,0 +1,110 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. Android API 10 and lower -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>-->
+        <item name="android:windowBackground">@color/lightpink</item>
+        <item name="android:statusBarColor">@color/lightpink</item>
+        <item name="drawerArrowStyle">@style/DrawerIcon</item>
+
+    </style>
+
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowBackground">@color/lightpink</item>
+    </style>
+
+    <style name="AppStartTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/lightpink</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- stuff for opacity bar above navigation-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/golden</item>
+        <item name="colorControlActivated">@color/lightgrey</item>
+    </style>
+
+    <style name="HeaderBar">
+        <item name="android:background">@color/lightpink</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+    <style name="SmallHeaders">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorPrimary">#4D4D4D</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="BreadText">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColorPrimary">#636363</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="BreadTextLight">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="ToiletHeader">
+        <item name="android:textColorPrimary">#4D4D4D</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppHeader">
+        <item name="android:textSize">70sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="SignUpHeader">
+        <item name="android:textSize">50sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+    <style name="MenuHeader">
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:background">#F8F8F8</item>
+        <item name="android:textColor">@color/textColorBlack</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:bottomLeftRadius">10dp</item>
+        <item name="android:bottomRightRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+    </style>
+
+    <style name="StartPage">
+        <item name="android:colorBackground">@color/lightpink</item>
+    </style>
+
+</resources>

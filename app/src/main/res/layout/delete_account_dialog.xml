@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin_edge"
+            android:layout_marginEnd="@dimen/margin_edge"
+            android:layout_marginTop="@dimen/margin_edge"
+            android:layout_height="wrap_content">
+
+        <TextView android:layout_width="wrap_content"
+                  android:text="@string/sure_of_delete_account"
+                  style="@style/ToiletHeader"
+                  android:gravity="center_horizontal"
+                  android:layout_height="wrap_content"/>
+
+        <EditText android:layout_width="wrap_content"
+                  android:id="@+id/email_text"
+                  android:inputType="textEmailAddress"
+                  android:hint="@string/hint_username"
+                  android:width="250dp"
+                  android:freezesText="true"
+                  android:layout_height="wrap_content"/>
+
+
+        <EditText android:layout_width="wrap_content"
+                  android:id="@+id/password_text"
+                  android:layout_marginTop="@dimen/margin_edge"
+                  android:freezesText="true"
+                  android:hint="@string/hint_password"
+                  android:inputType="textPassword"
+                  android:width="250dp"
+                  android:layout_height="wrap_content"/>
+
+        <Button
+                android:layout_width="250dp"
+                android:id="@+id/createAccountButton"
+                style="@style/ButtonStyle"
+                android:text="@string/delete_account"
+                android:layout_marginTop="25dp"
+                android:layout_height="35dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

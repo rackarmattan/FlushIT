@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "28162800816",
+    "firebase_url": "https://flushit-ed8ab.firebaseio.com",
+    "project_id": "flushit-ed8ab",
+    "storage_bucket": "flushit-ed8ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28162800816:android:0a19c549389b4f96",
+        "android_client_info": {
+          "package_name": "com.example.flushit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28162800816-h8da5de2qsk86h3t81mshpbinqmni0qf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flushit",
+            "certificate_hash": "6636971b37b352480ba43492d2bb756de1832a8d"
+          }
+        },
+        {
+          "client_id": "28162800816-vc3p6j3ocmvufj363tm0p2hvd3jn0u3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA5P82xX5wXnnNqIX5Gfv5SYdzpxtM_hQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28162800816-vc3p6j3ocmvufj363tm0p2hvd3jn0u3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
