@@ -61,4 +61,7 @@
     <string name="your_grade">Ditt betyg: %1$s.</string>
     <string name="sure_of_delete_account">Vill du verkligen ta bort ditt konto?</string>
     <string name="delete_account">TA BORT KONTO</string>
+    <string name="email">%1$s</string>
+    <string name="info_mail">E-mail: </string>
+
 </resources>

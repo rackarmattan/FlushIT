@@ -4,21 +4,39 @@
                                                    android:layout_height="match_parent"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView android:layout_width="match_parent"
+    <TextView android:layout_width="wrap_content"
               android:id="@+id/testText"
               app:layout_constraintTop_toTopOf="parent"
-              android:text="Test"
+              android:text="@string/info_mail"
               android:gravity="center_horizontal"
+              app:layout_constraintStart_toStartOf="parent"
               android:layout_marginTop="@dimen/margin_edge"
+              android:layout_marginStart="@dimen/margin_edge"
               android:layout_height="wrap_content"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:id="@+id/user_name"
+              app:layout_constraintStart_toEndOf="@+id/testText"
+              app:layout_constraintTop_toTopOf="parent"
+              android:layout_marginTop="@dimen/margin_edge"
+              android:text="@string/email"
+              android:layout_height="wrap_content"/>
+
+    <Button android:layout_width="34dp"
+            android:id="@+id/edit_email_button"
+            app:layout_constraintStart_toEndOf="@+id/user_name"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/margin_edge"
+            android:background="@drawable/ic_edit_white_24dp"
+            android:layout_height="34dp"/>
 
     <Button android:layout_width="wrap_content"
             android:id="@+id/delete_account_button"
-            app:layout_constraintTop_toBottomOf="@id/testText"
+            app:layout_constraintTop_toBottomOf="@id/edit_email_button"
             android:layout_marginTop="@dimen/margin_edge"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="TEST"
+            android:text="@string/delete_account"
             style="@style/ButtonStyle"
             android:layout_height="@dimen/button_height"/>
 
