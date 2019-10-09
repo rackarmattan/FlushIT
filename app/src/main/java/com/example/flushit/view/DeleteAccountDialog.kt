@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.flushit.R
+import com.example.flushit.model.User
 import com.example.flushit.viewmodel.UserViewModel
 
 class DeleteAccountDialog : AppCompatDialogFragment() {
@@ -16,6 +19,7 @@ class DeleteAccountDialog : AppCompatDialogFragment() {
     private lateinit var passwordText: EditText
     private lateinit var userViewModel: UserViewModel
     private lateinit var deleteAccountButton: Button
+    private lateinit var currentUser: User
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -27,6 +31,9 @@ class DeleteAccountDialog : AppCompatDialogFragment() {
             deleteAccountButton = view.findViewById(R.id.delete_account)
             deleteAccountButton.setOnClickListener { deleteAccount() }
             userViewModel = ViewModelProviders.of(it).get(UserViewModel::class.java)
+            userViewModel.getCurrentUser().observe(this, Observer {
+                currentUser = it
+            })
             builder.setView(view).setNegativeButton("Avbryt"){ _, _ ->     }
             builder.create()
         }?: throw IllegalStateException("Activity cannot be null")
@@ -45,6 +52,11 @@ class DeleteAccountDialog : AppCompatDialogFragment() {
             emailText.requestFocus()
             return
         }
+        if(email != currentUser.email){
+            emailText.error = resources.getString(R.string.email_not_eqaul_delete)
+            emailText.requestFocus()
+            return
+        }
 
         if (password.isEmpty()) {
             passwordText.error = resources.getString(R.string.password_not_empty)
@@ -52,7 +64,12 @@ class DeleteAccountDialog : AppCompatDialogFragment() {
             return
         }
 
-        userViewModel.deleteUserAccount(email, password)
+        //TODO kraschar på startpage men inte sign up, märkligt samt går att backa tills man inte har tagit bort
+        context?.let { userViewModel.deleteUserAccount(it, SignUpActivity::class.java, currentUser, password) }
+
+        userViewModel.getError().observe(this, Observer {
+            Toast.makeText(context, it.displayError(), Toast.LENGTH_LONG).show()
+        })
     }
 
 

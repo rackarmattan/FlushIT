@@ -73,6 +73,9 @@ class Repository private constructor(private val database: Database) {
 
     //--------------------nytillskott-----------------------------------------
 
+    fun deleteUsser(user:User) = database.userDao.deleteUser(user)
+
+
     fun rateToilet(userThatRated: User, toiletToRate: Toilet, grade: Float) {
         database.ratingDAO.rateToilet(userThatRated, toiletToRate, grade)
     }

@@ -175,17 +175,22 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
-    fun deleteUserAccount(email: String, password: String){
+    fun <T: AppCompatActivity>deleteUserAccount(context: Context, redirectTo: Class<T>, userToDelete: User, password: String){
         val user = auth.currentUser
-        val credential = EmailAuthProvider.getCredential(email, password)
-        user?.reauthenticate(credential)?.addOnCompleteListener {
-            if(it.isSuccessful){
-                user.delete()
-                //TODO ta bort ur databasen med
-            }
-            else{
-                //TODO kolla alla exceptions som kan bli och gör errors av dem
-                println("FAILED DELETE " + it.exception)
+        userToDelete.email?.let {
+            val credential = EmailAuthProvider.getCredential(it, password)
+            user?.reauthenticate(credential)?.addOnCompleteListener {
+                if(it.isSuccessful){
+                    user.delete()
+                    repository.deleteUsser(userToDelete)
+                    val intent = Intent(context, redirectTo)
+                    context.startActivity(intent)
+                    //TODO ta bort ur databasen med
+                }
+                else{
+                    //TODO kolla alla exceptions som kan bli och gör errors av dem
+                    println("FAILED DELETE " + it.exception)
+                }
             }
         }
     }

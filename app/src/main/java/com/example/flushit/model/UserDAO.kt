@@ -53,4 +53,10 @@ class UserDAO {
         addUser(user)
     }
 
+    fun deleteUser(user:User){
+        user.uid?.let {
+            databaseReference.child(it).removeValue()
+        }
+    }
+
 }

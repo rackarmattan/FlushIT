@@ -67,5 +67,6 @@
     <string name="hint_new_email">Din nya e-mail</string>
     <string name="hint_new_email_again">Din nya e-mail igen</string>
     <string name="save_changes">Spara ändringar</string>
+    <string name="email_not_eqaul_delete">Du måste skriva samma e-mail som den du har nu</string>
 
 </resources>

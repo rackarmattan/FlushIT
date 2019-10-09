@@ -47,6 +47,7 @@ class EditEmailDialog: AppCompatDialogFragment() {
         val newEmail = newEmailTextView.text.toString().trim()
         val password = passwordTextView.text.toString().trim()
         val emailAgain = newEmailTextViewAgain.text.toString().trim()
+
         if (newEmail.isEmpty()) {
             newEmailTextView.error = resources.getString(R.string.email_not_empty)
             newEmailTextView.requestFocus()
