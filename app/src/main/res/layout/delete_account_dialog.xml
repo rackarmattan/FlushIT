@@ -42,7 +42,7 @@
 
         <Button
                 android:layout_width="250dp"
-                android:id="@+id/createAccountButton"
+                android:id="@+id/delete_account"
                 style="@style/ButtonStyle"
                 android:text="@string/delete_account"
                 android:layout_marginTop="25dp"
