@@ -66,5 +66,6 @@
     <string name="hint_old_email">Din gamla e-mail</string>
     <string name="hint_new_email">Din nya e-mail</string>
     <string name="hint_new_email_again">Din nya e-mail igen</string>
+    <string name="save_changes">Spara ändringar</string>
 
 </resources>

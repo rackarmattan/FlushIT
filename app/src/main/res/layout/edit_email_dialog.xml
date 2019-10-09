@@ -47,6 +47,12 @@
                   android:width="250dp"
                   android:layout_height="wrap_content"/>
 
+        <Button android:layout_width="wrap_content"
+                android:text="@string/save_changes"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/save_changes"
+                android:layout_height="wrap_content"/>
+
 
 
 
