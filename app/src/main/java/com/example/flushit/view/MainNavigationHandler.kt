@@ -14,6 +14,7 @@ import com.example.flushit.utilities.InjectorUtils
 import com.example.flushit.viewmodel.UserViewModel
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.navigation_main_activity.*
+import kotlinx.android.synthetic.main.navigation_main_activity.*
 
 
 /**
