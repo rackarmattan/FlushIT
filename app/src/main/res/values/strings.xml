@@ -63,5 +63,8 @@
     <string name="delete_account">TA BORT KONTO</string>
     <string name="email">%1$s</string>
     <string name="info_mail">E-mail: </string>
+    <string name="hint_old_email">Din gamla e-mail</string>
+    <string name="hint_new_email">Din nya e-mail</string>
+    <string name="hint_new_email_again">Din nya e-mail igen</string>
 
 </resources>
