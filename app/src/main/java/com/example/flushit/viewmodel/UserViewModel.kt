@@ -188,8 +188,25 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
                 println("FAILED DELETE " + it.exception)
             }
         }
+    }
 
-
+    fun changeEmail(userToChange: User, newEmail: String, password: String){
+        val user = auth.currentUser
+        userToChange.email?.let {
+            val credential = EmailAuthProvider.getCredential(it, password)
+            user?.reauthenticate(credential)?.addOnCompleteListener {
+                if(it.isSuccessful){
+                    user.updateEmail(newEmail)
+                    userToChange.email = newEmail
+                    repository.updateUser(userToChange)
+                    //TODO show success message
+                }
+                else{
+                    //TODO kolla exceptions
+                    println("FAILED CHANGE EMAIL " + it.exception)
+                }
+            }
+        }
     }
 
 }
