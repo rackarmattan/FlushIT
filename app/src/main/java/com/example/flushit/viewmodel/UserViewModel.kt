@@ -11,6 +11,7 @@ import com.example.flushit.errors.*
 import com.example.flushit.model.*
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.*
+import java.lang.Exception
 
 /**
  * The viewmodel for users. This class handles communication between the views and the repository.
@@ -59,20 +60,7 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
             }
             else{
                 println(it.exception)
-                val customError: CustomError
-                if(it.exception is FirebaseAuthInvalidUserException){
-                    customError = NoCorrespondingUserError()
-                }
-                else if(it.exception is FirebaseAuthInvalidCredentialsException){
-                    customError = InvalidPasswordError()
-                }
-                else if(it.exception is FirebaseNetworkException){
-                    customError = NetworkError()
-                }
-                else{
-                    customError = OtherError()
-                }
-                error.value = customError
+                it.exception?.let { changeError(it) }
             }
         }
     }
@@ -109,18 +97,7 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
                 context.startActivity(intent)
             }
             else{
-                println(it.exception)
-                val customError: CustomError
-                if(it.exception is FirebaseAuthUserCollisionException){
-                    customError = DuplicateEmailError()
-                }
-                else if(it.exception is FirebaseNetworkException){
-                    customError = NetworkError()
-                }
-                else{
-                    customError = OtherError()
-                }
-                error.value = customError
+                it.exception?.let { changeError(it) }
             }
         }
     }
@@ -166,7 +143,16 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
         repository.removeToiletFromUser(owningUser, toiletToRemove, grade)
     }
 
-
+    private fun changeError(exception: Exception){
+        println("EXCEPTION MESSAGE: " + exception.message)
+        when (exception) {
+            is FirebaseAuthInvalidCredentialsException -> error.value = InvalidPasswordError()
+            is FirebaseAuthUserCollisionException -> error.value = DuplicateEmailError()
+            is FirebaseNetworkException -> error.value = NetworkError()
+            is FirebaseAuthInvalidUserException -> error.value = NoCorrespondingUserError()
+            else -> error.value = OtherError()
+        }
+    }
 
     fun getToiletsRatedByUser(): LiveData<List<Rating>>{
         return Transformations.switchMap(getCurrentUser()){
@@ -190,6 +176,7 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
                 else{
                     //TODO kolla alla exceptions som kan bli och gör errors av dem
                     println("FAILED DELETE " + it.exception)
+                    it.exception?.let { changeError(it) }
                 }
             }
         }
@@ -209,6 +196,7 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
                 else{
                     //TODO kolla exceptions
                     println("FAILED CHANGE EMAIL " + it.exception)
+                    it.exception?.let { changeError(it) }
                 }
             }
         }
