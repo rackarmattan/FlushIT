@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.flushit.R
+import com.example.flushit.errors.EmailChanged
 import com.example.flushit.model.User
 import com.example.flushit.viewmodel.UserViewModel
 import java.lang.IllegalStateException
@@ -74,6 +75,7 @@ class EditEmailDialog: AppCompatDialogFragment() {
 
         userViewModel.getError().observe(this, Observer {
             Toast.makeText(activity, it.displayError(), Toast.LENGTH_SHORT).show()
+            if(it is EmailChanged) dismiss()
         })
 
 
