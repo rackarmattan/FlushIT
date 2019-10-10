@@ -171,10 +171,8 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
                     repository.deleteUsser(userToDelete)
                     val intent = Intent(context, redirectTo)
                     context.startActivity(intent)
-                    //TODO ta bort ur databasen med
                 }
                 else{
-                    //TODO kolla alla exceptions som kan bli och gör errors av dem
                     println("FAILED DELETE " + it.exception)
                     it.exception?.let { changeError(it) }
                 }
@@ -191,10 +189,9 @@ class UserViewModel(private val repository: Repository) : ViewModel() {
                     user.updateEmail(newEmail)
                     userToChange.email = newEmail
                     repository.updateUser(userToChange)
-                    //TODO show success message
+                    error.value = EmailChanged()
                 }
                 else{
-                    //TODO kolla exceptions
                     println("FAILED CHANGE EMAIL " + it.exception)
                     it.exception?.let { changeError(it) }
                 }
